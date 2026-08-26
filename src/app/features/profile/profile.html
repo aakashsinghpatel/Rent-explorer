@@ -1,0 +1,31 @@
+<div class="container py-4 py-lg-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+      <div class="mb-4">
+        <h1 class="page-title h3 mb-1">Profile</h1>
+        <p class="text-muted mb-0">Basic account information and your posted apartments.</p>
+      </div>
+      @if(auth.currentUser(); as user){<section class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+          <div class="avatar">{{ user.name.charAt(0).toUpperCase() }}</div>
+          <h2 class="h5 fw-bold mt-3 mb-1">{{ user.name }}</h2>
+          <p class="text-muted mb-0">{{ user.email }}</p>
+        </div>
+      </section>}
+      @if(auth.isLandlord()){
+      <section class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h5 fw-bold mb-0">My Posts</h2><a routerLink="/create-post" class="btn btn-primary btn-sm">Create
+              Post</a>
+          </div>@for(listing of myListings(); track listing.id){<div class="border rounded-3 p-3 mb-2">
+            <div class="fw-semibold">{{ listing.title }}</div>
+            <div class="small text-muted">{{ listing.location }} · ₹{{ listing.price }}/month</div><a class="small"
+              [routerLink]="['/listing', listing.id]">View Details</a>
+          </div>}@empty{<p class="text-muted mb-0">You have not posted an apartment yet.</p>}
+        </div>
+      </section>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container py-4 py-lg-5">
+  <div class="mb-4">
+    <h1 class="page-title h3 mb-1">Communication</h1>
+    <p class="text-muted mb-0">Direct inquiries between prospective renters and landlords.</p>
+  </div>
+  <div class="row g-4">
+    <div class="col-12 col-lg-6">
+      <section class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <h2 class="h5 fw-bold mb-3">Received</h2>@for(message of received(); track message.id){<div
+            class="border rounded-3 p-3 mb-2">
+            <div class="d-flex justify-content-between gap-2"><strong>{{ message.fromUserName }}</strong><span
+                class="small text-muted">{{ message.createdAt | date:'medium' }}</span></div>
+            <div class="small text-muted mt-1">{{ message.apartmentTitle }}</div>
+            <p class="mb-2 mt-2">{{ message.message }}</p><a class="small"
+              [routerLink]="['/listing', message.apartmentId]">Open Listing</a>
+          </div>}@empty{<p class="text-muted mb-0">No inquiries received.</p>}
+        </div>
+      </section>
+    </div>
+    <div class="col-12 col-lg-6">
+      <section class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <h2 class="h5 fw-bold mb-3">Sent</h2>@for(message of sent(); track message.id){<div
+            class="border rounded-3 p-3 mb-2">
+            <div class="d-flex justify-content-between gap-2"><strong>To {{ message.toUserName }}</strong><span
+                class="small text-muted">{{ message.createdAt | date:'medium' }}</span></div>
+            <div class="small text-muted mt-1">{{ message.apartmentTitle }}</div>
+            <p class="mb-2 mt-2">{{ message.message }}</p><a class="small"
+              [routerLink]="['/listing', message.apartmentId]">Open Listing</a>
+          </div>}@empty{<p class="text-muted mb-0">No inquiries sent.</p>}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

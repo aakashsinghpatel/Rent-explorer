@@ -1,0 +1,111 @@
+<div class="container py-4 py-lg-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-xl-9">
+      @if(data(); as post){
+      <div class="mb-4">
+        <h1 class="page-title h3 mb-1">Preview and Submit</h1>
+        <p class="text-muted mb-0">
+          Review the post before it is added to the listings.
+        </p>
+      </div>
+      <section class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Property Type</span><strong>{{ post.building }}</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Property Name</span><strong>{{ post.title }}</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Address</span><strong>{{ post.location }}</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Rent</span><strong>{{ post.price | currency:'INR':'symbol':'1.0-0' }} /
+                  month</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Area</span><strong>{{ post.squareFeet }} sq ft</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Lease</span><strong>{{ post.leaseType }}</strong>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Description</span>
+                <p class="mb-0">{{ post.description }}</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="preview-box">
+                <span>Amenities</span>@for(a of post.amenities; track a){
+                <div>{{ a }}</div>
+                }@empty{
+                <div class="text-muted">None selected</div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+          <h2 class="h5 fw-bold">Additional Information</h2>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <span class="text-muted small">Shared</span>
+              <div>{{ post.shared ? 'Yes' : 'No' }}</div>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted small">Furnished</span>
+              <div>{{ post.furnished ? 'Yes' : 'No' }}</div>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted small">Negotiable</span>
+              <div>{{ post.negotiable ? 'Yes' : 'No' }}</div>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted small">Vegetarian</span>
+              <div>
+                {{ post.vegetarianPreference === 'preferred' ? 'Preferred' :
+                'Not Preferred' }}
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted small">Contact</span>
+              <div>{{ post.landlordName }}</div>
+            </div>
+            <div class="col-md-4">
+              <span class="text-muted small">Email</span>
+              <div>{{ post.landlordEmail }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="d-flex justify-content-between gap-2 mb-5">
+        <button class="btn btn-outline-secondary" type="button" (click)="back()">
+          Back to Home
+        </button>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-primary" type="button" (click)="edit()">
+            Edit</button><button class="btn btn-primary" type="button" (click)="submit()">
+            Submit Post
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

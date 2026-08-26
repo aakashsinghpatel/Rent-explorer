@@ -1,0 +1,19 @@
+:root {
+  --rh-primary: #0d6efd;
+  --rh-border: #e5e7eb;
+  --rh-muted: #6b7280;
+  --rh-bg: #f7f8fa;
+}
+
+body {
+  margin: 0;
+  background: var(--rh-bg);
+  color: #1f2937;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a { color: inherit; }
+.card { border-radius: .75rem; }
+.btn { border-radius: .5rem; }
+.page-title { font-weight: 700; }
+.text-muted { color: var(--rh-muted) !important; }
