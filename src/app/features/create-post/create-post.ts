@@ -3,6 +3,7 @@ import {
   Component,
   inject,
   OnInit,
+  signal,
 } from "@angular/core";
 import {
   FormArray,
@@ -13,6 +14,7 @@ import {
 import { Router } from "@angular/router";
 import { Apartment } from "../../core/models/apartment.model";
 import { AuthService } from "../../core/services/auth.service";
+import { IMAGE_1 } from "../../core/services/apartment.service";
 
 const DRAFT_KEY = "rentHubPostPreview";
 
@@ -29,7 +31,7 @@ export class CreatePostComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly auth = inject(AuthService);
   submitted = false;
-  selectedImages: string[] = [];
+  selectedImages = signal<string[]>([]);
   readonly amenityOptions = [
     "Gym/Fitness Center",
     "Swimming Pool",
@@ -106,6 +108,7 @@ export class CreatePostComponent implements OnInit {
         landlordEmail: String(data["landlordEmail"] ?? ""),
         description: String(data["description"] ?? ""),
       });
+      this.selectedImages.set([...data['images'] as string[] ?? []]);
       const selected = Array.isArray(data["amenities"])
         ? (data["amenities"] as string[])
         : [];
@@ -115,6 +118,31 @@ export class CreatePostComponent implements OnInit {
     } catch {
       sessionStorage.removeItem(DRAFT_KEY);
     }
+  }
+
+  onImagesSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+    const files = Array.from(input.files);
+    files.forEach((file) => {
+      if (!file.type.startsWith("image/")) {
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (typeof reader.result === "string") {
+          this.selectedImages.set([...this.selectedImages(), reader.result]);
+        }
+      };
+      reader.readAsDataURL(file);``
+    });
+    input.value = "";
+  }
+
+  removeImage(index: number): void {
+    this.selectedImages.set(this.selectedImages().filter((_, i) => i !== index));
   }
 
   submit(): void {
@@ -130,6 +158,7 @@ export class CreatePostComponent implements OnInit {
       landlordName: user?.name,
       landlordEmail: user?.email,
       amenities: this.amenityOptions.filter((_, index) => raw.amenities[index]),
+      images: this.selectedImages().length > 0 ? this.selectedImages() : [IMAGE_1],
     };
     sessionStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
     this.router.navigate(["/create-post/preview"]);

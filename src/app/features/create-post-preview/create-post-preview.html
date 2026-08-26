@@ -94,6 +94,28 @@
           </div>
         </div>
       </section>
+      <!-- Property Images -->
+      @if (post.images.length > 0) {
+        <section class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h2 class="h5 fw-bold mb-3">Property Images</h2>
+            <div class="row g-3">
+              @for (
+                image of post.images;
+                track $index;
+                let index = $index
+              ) {
+                <div class="col-6 col-md-4 col-lg-3">
+                  <img
+                    [src]="image"
+                    [alt]="'Property image ' + (index + 1)"
+                    class="img-fluid rounded border preview-image">
+                </div>
+              }
+            </div>
+          </div>
+        </section>
+      }
       <div class="d-flex justify-content-between gap-2 mb-5">
         <button class="btn btn-outline-secondary" type="button" (click)="back()">
           Back to Home

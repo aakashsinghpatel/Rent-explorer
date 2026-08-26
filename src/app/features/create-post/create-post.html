@@ -150,6 +150,44 @@
             </div>
           </div>
         </section>
+        <!-- Property Images -->
+        <section class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h2 class="h5 fw-bold mb-2"> Property Images </h2>
+            <p class="text-secondary small mb-3">Add one or more images of the apartment or property.
+            </p>
+            <label for="propertyImages" class="btn btn-outline-primary">
+              Choose Image(s)
+            </label>
+            <input id="propertyImages" type="file" class="d-none" accept="image/*" multiple
+              (change)="onImagesSelected($event)">
+            @if (selectedImages().length > 0) {
+            <div class="row g-3 mt-2">
+              @for (
+              image of selectedImages();
+              track $index;
+              let index = $index
+              ) {
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="position-relative">
+                  <img [src]="image" [alt]="'Property image ' + (index + 1)"
+                    class="img-fluid rounded border property-image">
+                  <button type="button" class="btn btn-sm btn-dark position-absolute top-0 end-0 m-1"
+                    (click)="removeImage(index)" [attr.aria-label]="'Remove image ' + (index + 1)">
+                    ×
+                  </button>
+                </div>
+              </div>
+              }
+            </div>
+            } @else {
+            <div class="border rounded p-4 mt-3 text-center text-secondary">
+              No images selected.
+            </div>
+            }
+          </div>
+
+        </section>
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
             <h2 class="h5 fw-bold">Description</h2>

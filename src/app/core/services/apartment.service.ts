@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 const APARTMENTS_KEY = 'rentHubApartments';
 const FAVOURITES_KEY = 'rentHubFavourites';
 
-const IMAGE_1 = 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80';
+export const IMAGE_1 = 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80';
 const IMAGE_2 = 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80';
 const IMAGE_3 = 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80';
 
@@ -43,7 +43,7 @@ export class ApartmentService {
       landlordId: user?.id ?? draft.landlordId,
       landlordName: user?.name ?? draft.landlordName,
       landlordEmail: user?.email ?? draft.landlordEmail,
-      images: [IMAGE_1],
+      images: draft.images ? draft.images : [IMAGE_1],
       featured: false,
       createdAt: new Date().toISOString()
     };

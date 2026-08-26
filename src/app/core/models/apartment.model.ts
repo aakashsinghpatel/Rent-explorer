@@ -38,4 +38,5 @@ export interface ApartmentDraft {
   landlordId: string;
   landlordName: string;
   landlordEmail: string;
+  images: string[];
 }
