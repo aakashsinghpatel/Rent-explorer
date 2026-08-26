@@ -9,13 +9,13 @@ export class AuthService {
   private readonly currentUserSignal = signal<User | null>(this.readSession());
   readonly currentUser = this.currentUserSignal.asReadonly();
   readonly isAuthenticated = computed(() => this.currentUserSignal() !== null);
-  readonly isLandlord = computed(()=> this.currentUserSignal()?.role === 'LandLord');
+  readonly isLandlord = computed(()=> this.currentUserSignal()?.role === 'Landlord');
 
   constructor() {
     const users = this.readUsers();
     if (users.length === 0) {
       this.writeUsers([
-        { id: 'demo-user', name: 'Demo User', email: 'demo@renthub.com', password: 'Demo@123', role: 'LandLord' },
+        { id: 'demo-user', name: 'Demo User', email: 'demo@renthub.com', password: 'Demo@123', role: 'Landlord' },
       ]);
     }
   }

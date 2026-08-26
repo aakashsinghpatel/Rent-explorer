@@ -10,51 +10,74 @@
           <div class="card-body p-4">
             <h2 class="h5 fw-bold mb-4">Choose your Apartment/Building</h2>
             <div class="row g-3">
-              <div class="col-md-6"><label class="form-label" for="building">Choose your
-                  Apartment/Building</label><select id="building" class="form-select" formControlName="building">
-                  <option value="" disabled>Select an option</option>@for(item of buildingOptions; track item){<option
-                    [value]="item">{{ item }}</option>}
-                </select></div>
-              <div class="col-md-6"><label class="form-label" for="title">Enter the name of your
-                  apartment/building</label><input id="title" class="form-control" formControlName="title"
-                  placeholder="Property name"
-                  [class.is-invalid]="submitted && form.controls.title.invalid">@if(submitted &&
-                form.controls.title.invalid){<div class="invalid-feedback">Property name is required.</div>}</div>
+              <div class="col-md-6">
+                <label class="form-label" for="building">Choose your
+                  Apartment/Building</label>
+                <select id="building" class="form-select" formControlName="building">
+                  <option value="" disabled>Select an option</option>
+                  @for(item of buildingOptions; track item){
+                  <option [value]="item">{{ item }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="title">Enter the name of your
+                  apartment/building</label>
+                <input id="title" class="form-control" formControlName="title" placeholder="Property name"
+                  [class.is-invalid]="submitted && form.controls.title.invalid">
+                @if(submitted && form.controls.title.invalid){
+                <div class="invalid-feedback">Property name is required.</div>}
+              </div>
             </div>
           </div>
         </section>
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
             <h2 class="h5 fw-bold">Is this a shared property?</h2>
-            <div class="form-check form-check-inline"><input id="sharedYes" class="form-check-input" type="radio"
-                [value]="true" formControlName="shared"><label class="form-check-label" for="sharedYes">Yes</label>
+            <div class="form-check form-check-inline">
+              <input id="sharedYes" class="form-check-input" type="radio" [value]="true" formControlName="shared">
+              <label class="form-check-label" for="sharedYes">Yes</label>
             </div>
-            <div class="form-check form-check-inline"><input id="sharedNo" class="form-check-input" type="radio"
-                [value]="false" formControlName="shared"><label class="form-check-label" for="sharedNo">No</label></div>
+            <div class="form-check form-check-inline">
+              <input id="sharedNo" class="form-check-input" type="radio" [value]="false" formControlName="shared">
+              <label class="form-check-label" for="sharedNo">No</label>
+            </div>
           </div>
         </section>
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
-            <h2 class="h5 fw-bold">Property Location</h2><input class="form-control" formControlName="location"
-              placeholder="Enter street address"
-              [class.is-invalid]="submitted && form.controls.location.invalid">@if(submitted &&
-            form.controls.location.invalid){<div class="invalid-feedback">Location is required.</div>}
+            <h2 class="h5 fw-bold">Property Location</h2>
+            <input class="form-control" formControlName="location" placeholder="Enter street address"
+              [class.is-invalid]="submitted && form.controls.location.invalid">
+            @if(submitted && form.controls.location.invalid){
+            <div class="invalid-feedback">Location is required.</div>}
           </div>
         </section>
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
             <h2 class="h5 fw-bold mb-4">Property Details</h2>
             <div class="row g-4">
-              <div class="col-md-6"><label class="form-label">Square Feet</label><input class="form-control"
-                  type="number" min="1" formControlName="squareFeet"
-                  [class.is-invalid]="submitted && form.controls.squareFeet.invalid">@if(submitted &&
-                form.controls.squareFeet.invalid){<div class="invalid-feedback">Enter a valid area.</div>}</div>
-              <div class="col-md-6"><label class="form-label d-block">Stay / Lease type</label>@for(item of
-                [{value:'long-term',label:'Long term (6+ months)'},{value:'short-term',label:'Short
-                term'},{value:'both',label:'Both'}]; track item.value){<div class="form-check"><input
-                    class="form-check-input" type="radio" [id]="item.value" [value]="item.value"
-                    formControlName="leaseType"><label class="form-check-label" [for]="item.value">{{ item.label
-                    }}</label></div>}</div>
+              <div class="col-md-6">
+                <label class="form-label">Square Feet</label>
+                <input class="form-control" type="number" min="1" formControlName="squareFeet"
+                  [class.is-invalid]="submitted && form.controls.squareFeet.invalid">
+                @if(submitted && form.controls.squareFeet.invalid){
+                <div class="invalid-feedback">Enter a valid area.</div>
+                }
+              </div>
+              <div class="col-md-6">
+                <label class="form-label d-block">Stay / Lease type</label>
+                @for(item of
+                [{value:'long-term',label:'Long term (6+ months)'},
+                {value:'short-term',label:'Short
+                term'},{value:'both',label:'Both'}]; track item.value){
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [id]="item.value" [value]="item.value"
+                    formControlName="leaseType">
+                  <label class="form-check-label" [for]="item.value">
+                    {{ item.label }}</label>
+                </div>}
+              </div>
             </div>
           </div>
         </section>
@@ -62,19 +85,29 @@
           <div class="card-body p-4">
             <h2 class="h5 fw-bold mb-4">Expected Rent</h2>
             <div class="row g-4">
-              <div class="col-md-6"><label class="form-label">Expected Rent</label><input class="form-control"
-                  type="number" min="1" formControlName="price" placeholder="Enter expected rent"
-                  [class.is-invalid]="submitted && form.controls.price.invalid">@if(submitted &&
-                form.controls.price.invalid){<div class="invalid-feedback">Expected rent is required.</div>}</div>
               <div class="col-md-6">
-                <div class="form-check mb-2"><input id="negotiable" class="form-check-input" type="checkbox"
-                    formControlName="negotiable"><label class="form-check-label" for="negotiable">Negotiable</label>
+                <label class="form-label">Expected Rent</label>
+                <input class="form-control" type="number" min="1" formControlName="price"
+                  placeholder="Enter expected rent" [class.is-invalid]="submitted && form.controls.price.invalid">
+                @if(submitted && form.controls.price.invalid){
+                <div class="invalid-feedback">Expected rent is required.</div>
+                }
+              </div>
+              <div class="col-md-6">
+                <div class="form-check mb-2">
+                  <input id="negotiable" class="form-check-input" type="checkbox" formControlName="negotiable">
+                  <label class="form-check-label" for="negotiable">Negotiable</label>
                 </div>
-                <div class="form-check"><input id="perMonth" class="form-check-input" type="radio" value="per-month"
-                    formControlName="priceMode"><label class="form-check-label" for="perMonth">Per Month</label></div>
-                <div class="form-check"><input id="utilities" class="form-check-input" type="radio"
-                    value="utilities-included" formControlName="priceMode"><label class="form-check-label"
-                    for="utilities">Utilities included in rent</label></div>
+                <div class="form-check">
+                  <input id="perMonth" class="form-check-input" type="radio" value="per-month"
+                    formControlName="priceMode">
+                  <label class="form-check-label" for="perMonth">Per Month</label>
+                </div>
+                <div class="form-check">
+                  <input id="utilities" class="form-check-input" type="radio" value="utilities-included"
+                    formControlName="priceMode">
+                  <label class="form-check-label" for="utilities">Utilities included in rent</label>
+                </div>
               </div>
             </div>
           </div>
@@ -82,58 +115,70 @@
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
             <h2 class="h5 fw-bold">Is the room/apartment furnished?</h2>
-            <div class="form-check form-check-inline"><input id="furnishedYes" class="form-check-input" type="radio"
-                [value]="true" formControlName="furnished"><label class="form-check-label"
-                for="furnishedYes">Yes</label></div>
-            <div class="form-check form-check-inline"><input id="furnishedNo" class="form-check-input" type="radio"
-                [value]="false" formControlName="furnished"><label class="form-check-label" for="furnishedNo">No</label>
+            <div class="form-check form-check-inline">
+              <input id="furnishedYes" class="form-check-input" type="radio" [value]="true" formControlName="furnished">
+              <label class="form-check-label" for="furnishedYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="furnishedNo" class="form-check-input" type="radio" [value]="false" formControlName="furnished">
+              <label class="form-check-label" for="furnishedNo">No</label>
             </div>
             <hr>
             <h2 class="h5 fw-bold">Amenities included</h2>
-            <div class="row g-2" formArrayName="amenities">@for(item of amenityOptions; track item; let i = $index){<div
-                class="col-12 col-md-4">
-                <div class="form-check"><input class="form-check-input" type="checkbox" [id]="'amenity-'+i"
-                    [formControlName]="i"><label class="form-check-label" [for]="'amenity-'+i">{{ item }}</label></div>
-              </div>}</div>
+            <div class="row g-2" formArrayName="amenities">
+              @for(item of amenityOptions; track item; let i = $index){
+              <div class="col-12 col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" [id]="'amenity-'+i" [formControlName]="i">
+                  <label class="form-check-label" [for]="'amenity-'+i">{{ item }}</label>
+                </div>
+              </div>}
+            </div>
             <hr>
-            <div class="mb-3"><label class="form-label d-block">Vegetarian preference</label>
-              <div class="form-check form-check-inline"><input id="vegPreferred" class="form-check-input" type="radio"
-                  value="preferred" formControlName="vegetarianPreference"><label class="form-check-label"
-                  for="vegPreferred">Preferred</label></div>
-              <div class="form-check form-check-inline"><input id="vegNotPreferred" class="form-check-input"
-                  type="radio" value="not-preferred" formControlName="vegetarianPreference"><label
-                  class="form-check-label" for="vegNotPreferred">Not Preferred</label></div>
-            </div>
-          </div>
-        </section>
-        <section class="card border-0 shadow-sm mb-4">
-          <div class="card-body p-4">
-            <h2 class="h5 fw-bold">Contact Details</h2>
-            <div class="row g-3">
-              <div class="col-md-6"><label class="form-label">Name</label><input class="form-control"
-                  formControlName="landlordName" [class.is-invalid]="submitted && form.controls.landlordName.invalid">
+            <div class="mb-3">
+              <label class="form-label d-block">Vegetarian preference</label>
+              <div class="form-check form-check-inline">
+                <input id="vegPreferred" class="form-check-input" type="radio" value="preferred"
+                  formControlName="vegetarianPreference">
+                <label class="form-check-label" for="vegPreferred">Preferred</label>
               </div>
-              <div class="col-md-6"><label class="form-label">Email</label><input class="form-control" type="email"
-                  formControlName="landlordEmail" [class.is-invalid]="submitted && form.controls.landlordEmail.invalid">
+              <div class="form-check form-check-inline">
+                <input id="vegNotPreferred" class="form-check-input" type="radio" value="not-preferred"
+                  formControlName="vegetarianPreference">
+                <label class="form-check-label" for="vegNotPreferred">Not Preferred</label>
               </div>
             </div>
           </div>
         </section>
         <section class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
-            <h2 class="h5 fw-bold">Description</h2><label class="form-label">Title</label><input
-              class="form-control mb-3" formControlName="title"><label class="form-label">Description</label><textarea
-              class="form-control" rows="6" maxlength="1400" formControlName="description"
+            <h2 class="h5 fw-bold">Description</h2>
+            <div class="mb-3">
+              <label class="form-label">Title</label>
+              <input class="form-control" formControlName="title" placeholder="Enter title"
+                [class.is-invalid]="submitted && form.controls.title.invalid">
+              @if(submitted && form.controls.title.invalid){
+              <div class="invalid-feedback">Title is required.</div>
+              }
+            </div>
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="6" maxlength="1400" formControlName="description"
               placeholder="Enter a detailed description within 1400 characters"
-              [class.is-invalid]="submitted && form.controls.description.invalid"></textarea>@if(submitted &&
-            form.controls.description.invalid){<div class="invalid-feedback">Description is required and must be within
-              1400 characters.</div>}<div class="small text-muted mt-1">{{ form.controls.description.value.length
-              }}/1400</div>
+              [class.is-invalid]="submitted && form.controls.description.invalid">
+            </textarea>
+            @if(submitted && form.controls.description.invalid){
+            <div class="invalid-feedback">Description is required and must be within 1400 characters.
+            </div>
+            }
+            <div class="small text-muted mt-1">
+              {{ form.controls.description.value.length}}/1400
+            </div>
           </div>
         </section>
-        <div class="d-flex justify-content-end gap-2 mb-5"><button class="btn btn-outline-secondary" type="button"
-            (click)="reset()">Reset</button><button class="btn btn-primary px-4" type="submit">Continue to
-            Preview</button></div>
+        <div class="d-flex justify-content-end gap-2 mb-5">
+          <button class="btn btn-outline-secondary" type="button" (click)="reset()">Reset</button>
+          <button class="btn btn-primary px-4" type="submit">Continue to Preview</button>
+        </div>
       </form>
     </div>
   </div>

@@ -29,6 +29,7 @@ export class CreatePostComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly auth = inject(AuthService);
   submitted = false;
+  selectedImages: string[] = [];
   readonly amenityOptions = [
     "Gym/Fitness Center",
     "Swimming Pool",
@@ -118,6 +119,7 @@ export class CreatePostComponent implements OnInit {
 
   submit(): void {
     this.submitted = true;
+    const user = this.auth.currentUser();
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -125,6 +127,8 @@ export class CreatePostComponent implements OnInit {
     const raw = this.form.getRawValue();
     const draft = {
       ...raw,
+      landlordName: user?.name,
+      landlordEmail: user?.email,
       amenities: this.amenityOptions.filter((_, index) => raw.amenities[index]),
     };
     sessionStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
