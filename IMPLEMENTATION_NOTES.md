@@ -7,17 +7,17 @@
 | Registration and authentication | `features/auth/*`, `core/services/auth.service.ts` |
 | Authorized posting/comments | `core/guards/auth.guard.ts`, auth checks in comment/inquiry UI and services |
 | Apartment listings | `core/models/apartment.model.ts`, `core/services/apartment.service.ts` |
-| Home featured carousel | `features/home/home.*` |
+| Home featured carousel | `features/home/featured-listing/featured-listing.ts` |
 | Paginated listings | `features/home/home.ts` |
-| Search | Home search control |
-| Location filter | Home location control |
-| Price range filter | Home min/max rent controls |
-| Amenities filter | Home amenity control |
-| Sorting | Home sort control |
+| Search | Home search control `features/home/filter-control/filter-control.ts` |
+| Location filter | Home location control `features/home/filter-control/filter-control.ts` |
+| Price range filter | Home min/max rent controls `features/home/filter-control/filter-control.ts` |
+| Amenities filter | Home amenity control `features/home/filter-control/filter-control.ts` |
+| Sorting | Home sort control `features/home/filter-control/filter-control.ts` |
 | Favourite action | `ApartmentService.toggleFavourite()` |
-| Listing details | `features/listing-details/*` |
-| Direct inquiry | `core/services/inquiry.service.ts`, listing details |
-| Comments | `CommentService`, `CommunicationPanel` |
+| Apartment/Listing details | `features/apartment-details/*` |
+| Direct inquiry | `core/services/inquiry.service.ts` |
+| Comments | `CommentService`, `features/apartment-details/apartment-details-comment-panel/apartment-details-comment-panel.*` |
 | Replies | `Comment.parentId` and reply UI |
 | Profile | `features/profile/*` |
 | Communication | `features/communication/communication.*` |
@@ -31,4 +31,4 @@
 | Unit test: module | `communication.module.spec.ts` |
 | CSS library | Bootstrap 5 |
 | Standalone Angular app | Root/features use standalone components |
-| NgModule exposure | Communication comment component uses `CommunicationModule` |
+| NgModule exposure | Communication component uses `CommunicationModule` |
