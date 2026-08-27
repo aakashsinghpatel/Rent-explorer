@@ -23,8 +23,8 @@
 | Communication | `features/communication/communication.*` |
 | Create post | `features/create-post/*` |
 | Validation | Angular Reactive Forms validators |
-| Preview and submit | `features/create-post-preview/*` |
-| Edit preview | sessionStorage draft restoration |
+| Preview and submit (Bonus Implementation) | `features/create-post-preview/*` |
+| Edit preview (Bonus Implementation) | sessionStorage draft restoration |
 | Back to Home | preview clears draft and navigates home |
 | Unit test: component | `home.spec.ts` |
 | Unit test: service | `apartment.service.spec.ts` |
