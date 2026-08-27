@@ -1,0 +1,20 @@
+  @if (featured().length) {
+    @if (featured()[featuredIndex()]; as apartment) {
+    <div class="featured-slide rounded-3 overflow-hidden shadow-sm">
+      <img [src]="apartment.images[0]" [alt]="apartment.title">
+      <div class="featured-copy">
+        <span class="badge text-bg-primary mb-2">Featured</span>
+        <h2 class="h4 fw-bold">{{ apartment.title }}</h2>
+        <p class="mb-2">{{ apartment.location }} · {{ apartment.price | currency:'INR':'symbol':'1.0-0' }}/month</p>
+        <a class="btn btn-light btn-sm" [routerLink]="['/listing', apartment.id]">View Details</a>
+      </div>
+      <div class="featured-controls">
+        <button class="btn btn-light btn-sm" type="button" [disabled]="featuredIndex() === 0"
+          (click)="onPreviousFeatured.emit()">‹</button>
+        <span>{{ featuredIndex() + 1 }} / {{ featured().length }}</span>
+        <button class="btn btn-light btn-sm" type="button" [disabled]="featuredIndex() === featured().length - 1"
+          (click)="onNextFeatured.emit()">›</button>
+      </div>
+    </div>
+    }
+    }

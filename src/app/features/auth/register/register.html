@@ -5,36 +5,48 @@
         <div class="card-body p-4 p-md-5">
           <h1 class="h3 fw-bold mb-1">Register</h1>
           <p class="text-muted mb-4">Create a basic RentHub account.</p>
-          @if (error) { <div class="alert alert-danger">{{ error }}</div> }
+          @if (error) {
+          <div class="alert alert-danger">{{ error }}</div>
+          }
           <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-            <div class="mb-3"><label class="form-label" for="name">Name</label><input id="name" class="form-control"
-                formControlName="name" [class.is-invalid]="submitted && form.controls.name.invalid">@if(submitted &&
-              form.controls.name.invalid){<div class="invalid-feedback">Name is required.</div>}</div>
-            <div class="mb-3"><label class="form-label" for="email">Email</label><input id="email" class="form-control"
-                type="email" formControlName="email"
-                [class.is-invalid]="submitted && form.controls.email.invalid">@if(submitted &&
-              form.controls.email.invalid){<div class="invalid-feedback">Enter a valid email.</div>}</div>
-            <div class="mb-4"><label class="form-label" for="password">Password</label><input id="password"
-                class="form-control" type="password" formControlName="password"
-                [class.is-invalid]="submitted && form.controls.password.invalid">@if(submitted &&
-              form.controls.password.invalid){<div class="invalid-feedback">Password must be at least 6 characters.
-              </div>}</div>
+            <div class="mb-3"><label class="form-label" for="name">Name</label>
+              <input id="name" class="form-control" formControlName="name"
+                [class.is-invalid]="submitted && form.controls.name.invalid">
+              @if(submitted && form.controls.name.invalid){
+              <div class="invalid-feedback">Name is required.</div>
+              }
+            </div>
+            <div class="mb-3"><label class="form-label" for="email">Email</label>
+              <input id="email" class="form-control" type="email" formControlName="email"
+                [class.is-invalid]="submitted && form.controls.email.invalid">
+              @if(submitted && form.controls.email.invalid){
+              <div class="invalid-feedback">Enter a valid email.</div>
+              }
+            </div>
+            <div class="mb-4"><label class="form-label" for="password">Password</label>
+              <input id="password" class="form-control" type="password" formControlName="password"
+                [class.is-invalid]="submitted && form.controls.password.invalid">
+              @if(submitted && form.controls.password.invalid){
+              <div class="invalid-feedback">Password must be at least 6 characters.</div>
+              }
+            </div>
 
             <div class="mb-4">
               <div class="form-label ">I am a?</div>
-              <div class="form-check form-check-inline ">
+              <div class="form-check form-check-inline">
                 <input id="landlord" class="form-check-input" type="radio" [value]="'Landlord'" formControlName="role"
                   [class.is-invalid]="submitted && form.controls.role.invalid"><label class="form-label"
                   for="landlord">Landlord</label>
               </div>
               <div class="form-check form-check-inline"><input id="renter" class="form-check-input" type="radio"
                   [value]="'Renter'" formControlName="role"
-                  [class.is-invalid]="submitted && form.controls.role.invalid"><label class="form-label"
-                  for="renter">Renter</label>
+                  [class.is-invalid]="submitted && form.controls.role.invalid">
+                <label class="form-label" for="renter">Renter</label>
               </div>
-              @if(submitted && form.controls.role.invalid){<div class="mt-0 invalid-feedback d-block">Role is required.</div>}
+              @if(submitted && form.controls.role.invalid) {
+              <div class="mt-0 invalid-feedback d-block">Role is required.</div>
+              }
             </div>
-
             <button class="btn btn-primary w-100" type="submit">Register</button>
           </form>
           <div class="text-center mt-3">Already registered? <a routerLink="/login">Login</a></div>

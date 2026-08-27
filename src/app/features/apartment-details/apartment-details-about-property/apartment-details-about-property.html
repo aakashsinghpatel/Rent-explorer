@@ -1,0 +1,12 @@
+<section class="card border-0 shadow-sm mb-4">
+  <div class="card-body p-4">
+    <h2 class="h5 fw-bold mb-3">About this property</h2>
+    <p>{{ apartment().description }}</p>
+    <div class="row g-3">
+      <div class="col-md-6"><strong>Building:</strong> {{ apartment().building }}</div>
+      <div class="col-md-6"><strong>Shared:</strong> {{ apartment().shared ? 'Yes' : 'No' }}</div>
+      <div class="col-md-6"><strong>Negotiable:</strong> {{ apartment().negotiable ? 'Yes' : 'No' }}</div>
+      <div class="col-md-6"><strong>Price mode:</strong> {{ apartment().priceMode }}</div>
+    </div>
+  </div>
+</section>

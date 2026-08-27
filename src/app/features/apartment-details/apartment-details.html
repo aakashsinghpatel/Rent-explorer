@@ -1,0 +1,23 @@
+<div class="container py-4 py-lg-5">
+  @if (apartment(); as apartment) {
+ <app-apartment-details-header [apartment]="apartment" (onToggleFavourite)="toggleFavourite()" [isFavourite]="isFavourite()"></app-apartment-details-header>
+  <app-apartment-details-pictures title="apartment.title" [images]="apartment.images"></app-apartment-details-pictures>
+  <div class="row g-4">
+    <div class="col-12 col-lg-8">
+      <app-apartment-details-rental-details [apartment]="apartment"></app-apartment-details-rental-details>
+      <app-apartment-details-about-property [apartment]="apartment"></app-apartment-details-about-property>
+      <app-apartment-details-amenities [amenities]="apartment.amenities"></app-apartment-details-amenities>
+      <app-apartment-details-comment-panel [apartmentId]="apartment.id" />
+    </div>
+    <div class="col-12 col-lg-4">
+      <app-apartment-details-contact-inquiry [apartment]="apartment" [isAuthenticated]="auth.isAuthenticated()" 
+    (onSendInquiry)="sendInquiry($event)" /> 
+    </div>
+  </div>
+  } @else {
+  <div class="alert alert-warning"><strong>Listing not found.</strong>
+    <div class="mt-2">
+      <a routerLink="/home" class="btn btn-primary btn-sm">Back to listings</a>
+    </div>
+  </div> }
+</div>

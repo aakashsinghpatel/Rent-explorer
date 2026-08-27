@@ -5,12 +5,13 @@
         <h3 class="h5 fw-bold">{{ listing().title }}</h3>
         <p class="small text-muted flex-grow-1">{{ listing().description }}</p>
         <div class="fw-bold mb-3">{{ listing().price | currency:'INR':'symbol':'1.0-0' }}/month</div>
-        <div class="d-flex gap-2"><a class="btn btn-primary btn-sm flex-grow-1"
-                [routerLink]="['/listing', listing().id]">View Details</a><button
-                class="btn btn-outline-secondary btn-sm" type="button" (click)="toggleFavItem.emit(listing().id)">
+        <div class="d-flex gap-2">
+            <a class="btn btn-primary btn-sm flex-grow-1" [routerLink]="['/listing', listing().id]">View Details</a>
+            <button class="btn btn-outline-secondary btn-sm" type="button" (click)="toggleFavItem.emit(listing().id)">
                 <span class="favourite-icon" [class.favourite-selected]="isFavourite(listing().id)">
                     {{ isFavourite(listing().id) ? '★' : '☆' }}
-                </span>
-                Favourite</button></div>
+                </span> Favourite
+            </button>
+        </div>
     </div>
 </article>

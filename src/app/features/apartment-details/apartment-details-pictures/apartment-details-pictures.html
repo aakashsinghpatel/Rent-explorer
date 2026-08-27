@@ -1,0 +1,7 @@
+<div class="row g-2 mb-4">
+<div class="col-12 col-md-8"><img class="hero-image rounded-3" [src]="images()[0]" [alt]="title()">
+</div>
+<div class="col-12 col-md-4">@for(image of images().slice(1); track image)
+    {<img class="secondary-image rounded-3 mb-2" [src]="image" [alt]="title()">}
+</div>
+</div>

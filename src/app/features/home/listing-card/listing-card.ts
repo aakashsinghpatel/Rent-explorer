@@ -1,8 +1,8 @@
 import { Component, inject, input, output } from '@angular/core';
-import { Apartment } from '../../core/models/apartment.model';
+import { Apartment } from '../../../core/models/apartment.model';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
-import { ApartmentService } from '../../core/services/apartment.service';
+import { ApartmentService } from '../../../core/services/apartment.service';
 
 @Component({
   imports: [RouterLink, CurrencyPipe],

@@ -10,13 +10,13 @@ import { CommentService } from "../../../core/services/comment.service";
 import { AuthService } from "../../../core/services/auth.service";
 
 @Component({
-  selector: "app-communication-panel",
+  selector: "app-apartment-details-comment-panel",
   standalone: false,
-  templateUrl: "./communication-panel.html",
-  styleUrl: "./communication-panel.scss",
+  templateUrl: "./apartment-details-comment-panel.html",
+  styleUrl: "./apartment-details-comment-panel.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CommunicationPanel {
+export class ApartmentDetailsCommentPanel {
   @Input({ required: true }) apartmentId = "";
   readonly commentService = inject(CommentService);
   readonly auth = inject(AuthService);

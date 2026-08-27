@@ -5,19 +5,27 @@
         <div class="card-body p-4 p-md-5">
           <h1 class="h3 fw-bold mb-1">Login</h1>
           <p class="text-muted mb-4">Sign in to post, comment and communicate.</p>
-          @if (error) { <div class="alert alert-danger">{{ error }}</div> }
+          @if (error) {
+          <div class="alert alert-danger">{{ error }}</div>
+          }
           <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
             <div class="mb-3"><label class="form-label" for="email">Email</label><input id="email" class="form-control"
-                type="email" formControlName="email"
-                [class.is-invalid]="submitted && form.controls.email.invalid">@if(submitted &&
-              form.controls.email.invalid){<div class="invalid-feedback">Enter a valid email.</div>}</div>
-            <div class="mb-4"><label class="form-label" for="password">Password</label><input id="password"
-                class="form-control" type="password" formControlName="password"
-                [class.is-invalid]="submitted && form.controls.password.invalid">@if(submitted &&
-              form.controls.password.invalid){<div class="invalid-feedback">Password is required.</div>}</div>
+                type="email" formControlName="email" [class.is-invalid]="submitted && form.controls.email.invalid">
+              @if(submitted && form.controls.email.invalid){
+              <div class="invalid-feedback">Enter a valid email.</div>
+              }
+            </div>
+            <div class="mb-4"><label class="form-label" for="password">Password</label>
+              <input id="password" class="form-control" type="password" formControlName="password"
+                [class.is-invalid]="submitted && form.controls.password.invalid">
+              @if(submitted && form.controls.password.invalid){
+              <div class="invalid-feedback">Password is required.</div>
+              }
+            </div>
             <button class="btn btn-primary w-100" type="submit">Login</button>
           </form>
-          <div class="small text-muted mt-4">Demo: demo@renthub.com / Demo@123</div>
+          <div class="small text-muted mt-4">Demo(Renter): renter@renthub.com / Demo@123</div>
+          <div class="small text-muted mt-4">Demo(Landlord): landlord@renthub.com / Demo@123</div>
           <div class="text-center mt-3">New user? <a routerLink="/register">Register</a></div>
         </div>
       </div>

@@ -27,8 +27,8 @@ export const routes: Routes = [
   {
     path: "listing/:id",
     loadComponent: () =>
-      import("./features/listing-details/listing-details").then(
-        (m) => m.ListingDetailsComponent,
+      import("./features/apartment-details/apartment-details").then(
+        (m) => m.ApartmentDetailsComponent,
       ),
   },
   {

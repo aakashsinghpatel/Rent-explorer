@@ -10,12 +10,14 @@ import { FormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
 import { Apartment } from "../../core/models/apartment.model";
 import { ApartmentService } from "../../core/services/apartment.service";
-import { ListingCard } from "../listing-card/listing-card";
+import { ListingCard } from "./listing-card/listing-card";
+import { FeaturedListing } from "./featured-listing/featured-listing";
+import { FilterControls } from "./filter-controls/filter-controls";
 
 @Component({
   selector: "app-home",
   standalone: true,
-  imports: [ListingCard, CurrencyPipe, FormsModule, RouterLink],
+  imports: [FeaturedListing,FilterControls, ListingCard, FormsModule],
   templateUrl: "./home.html",
   styleUrl: "./home.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -33,17 +35,6 @@ export class HomeComponent {
   readonly pageSize = 3;
   readonly featuredIndex = signal(0);
 
-  readonly amenityOptions = [
-    "Parking",
-    "WiFi",
-    "Power Backup",
-    "Security System",
-    "Gym/Fitness Center",
-    "Swimming Pool",
-    "Private Lawn",
-    "Elevator",
-    "Club House",
-  ];
   readonly featured = computed(() =>
     this.apartments()
       .filter((a) => a.featured)

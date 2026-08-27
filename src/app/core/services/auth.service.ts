@@ -15,7 +15,8 @@ export class AuthService {
     const users = this.readUsers();
     if (users.length === 0) {
       this.writeUsers([
-        { id: 'demo-user', name: 'Demo User', email: 'demo@renthub.com', password: 'Demo@123', role: 'Landlord' },
+        { id: 'demo-renter', name: 'Demo Renter', email: 'renter@renthub.com', password: 'Demo@123', role: 'Renter' },
+        { id: 'demo-landlord', name: 'Demo Landlord', email: 'landlord@renthub.com', password: 'Demo@123', role: 'Landlord' },
       ]);
     }
   }
