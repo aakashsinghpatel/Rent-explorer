@@ -55,10 +55,10 @@ Since the assignment does not provide a backend/API specification, the applicati
 - View user's property posts.
 ### 📱 Responsive Design
 - The application is designed to provide a consistent and user-friendly experience across different screen sizes and devices, including:
-* 1. Desktop *
-* 2. Laptop *
-* 3. Tablet *
-* 4. Mobile *
+#### 1. Desktop ####
+#### 2. Laptop ####
+#### 3. Tablet ####
+#### 4. Mobile ####
 
 The UI adapts layouts, property cards, navigation, forms, and content sections to provide a responsive experience across supported screen sizes.
 
@@ -108,7 +108,7 @@ src/
 |   ├── app.routes.ts
 |   ├── core/
 |   |   ├── guards/
-|   |   |   └── auth.guard.ts 
+|   |   |   └── auth.guard.ts
 |   |   ├── services/
 |   |   |   ├── apartment.service.ts
 |   |   |   ├── apartment.service.spec.ts
@@ -214,35 +214,35 @@ src/
     npm: Compatible version bundled with Node.js 24
     Browser: Modern web browser
 
-** 1. clone the repo: **
+#### 1. clone the repo: ####
 ```bash 
 git clone https://github.com/aakashsinghpatel/Rent-explorer.git
 ```
 
-* 2. Install all `npm` dependancies: *
+#### 2. Install all `npm` dependancies: ####
 ```bash 
 cd Rent-explorer
 npm install
 ```
-* 3. Start development server *
+#### 3. Start development server ####
 ```bash 
 npm start
 ```
-* 4. Build production application *
+#### 4. Build production application ####
 ```bash
 npm run build
 ```
-* 5. Run unit tests *
+#### 5. Run unit tests ####
 ```bash
 npm test
 ```
 ### 🔑  Demo credentials
-** Landlord's Credentials: **
+#### Landlord's Credentials: ####
 ```bash
 - Email: `landlord@renthub.com`
 - Password: `Demo@123`
 ```
-** Renter's Credentials: **
+#### Renter's Credentials: ####
 ```bash
 - Email: `renter@renthub.com`
 - Password: `Demo@123`
