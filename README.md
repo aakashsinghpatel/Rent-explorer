@@ -214,7 +214,7 @@ src/
     npm: Compatible version bundled with Node.js 24
     Browser: Modern web browser
 
-* 1. clone the repo: *
+** 1. clone the repo: **
 ```bash 
 git clone https://github.com/aakashsinghpatel/Rent-explorer.git
 ```
