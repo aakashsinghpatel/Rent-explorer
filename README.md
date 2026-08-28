@@ -119,9 +119,6 @@ src/
 |   |   |   └── user.model.ts
 |   ├── features/
 |   |   ├── apartment-details/
-|   |   |   ├── apartment-details.html
-|   |   |   ├── apartment-details.scss
-|   |   |   ├── apartment-details.ts
 |   |   |   |   ├── apartment-details-about-property
 |   |   |   |   |   ├── apartment-details-about-property.html
 |   |   |   |   |   ├── apartment-details-about-property.scss
@@ -150,6 +147,9 @@ src/
 |   |   |   |   |   ├── apartment-details-rental-details.html
 |   |   |   |   |   ├── apartment-details-rental-details.scss
 |   |   |   |   |   └── apartment-details-rental-details.ts
+|   |   |   ├── apartment-details.html
+|   |   |   ├── apartment-details.scss
+|   |   |   ├── apartment-details.ts
 |   |   ├── auth/
 |   |   |   ├── login
 |   |   |   |   ├── login.html
@@ -258,3 +258,17 @@ This project demonstrates a complete **end-to-end rent hub/Explore system**, for
 
 ## 🙌 Author
  Akash Patel
+
+ ![alt text](image.png)
+
+ ![alt text](image-1.png)
+
+ ![alt text](image-2.png)
+
+ ![alt text](image-3.png)
+
+ ![alt text](image-4.png)
+
+ ![alt text](image-5.png)
+
+ ![alt text](image-6.png)
