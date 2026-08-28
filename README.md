@@ -1,6 +1,6 @@
 # RentHub 🏠
 
-A seamless, user-friendly digital platform for apartment rentals.. RentHub enables landlords to publish rental properties and allows prospective renters to discover, filter, favourite, and inquire about available apartments.
+A seamless, user-friendly digital platform for apartment rentals. RentHub enables landlords to publish rental properties and allows prospective renters to discover, filter, favourite, and inquire about available apartments.
 
 ## 📌 Project Overview
 
@@ -14,8 +14,8 @@ Renters can browse available apartments, search and filter listings, view detail
 Since the assignment does not provide a backend/API specification, the application uses browser web storage as a mock persistence layer. This keeps the application fully functional without requiring a backend server and allows the data layer to be replaced with real APIs later without changing the core feature contracts.
 
 ## 🔗 Project Links
-- GitHub Repository: <GITHUB_REPOSITORY_URL>
-- Live Application: <DEPLOYED_APPLICATION_URL>
+- GitHub Repository: `<GITHUB_REPOSITORY_URL>`
+- Live Application: `<DEPLOYED_APPLICATION_URL>`
 
 ## ✨ Key Features
 ### 🔐 Authentication & Authorization
@@ -29,7 +29,6 @@ Since the assignment does not provide a backend/API specification, the applicati
 - Property search.
 - Location and price filtering.
 - Sorting.
-- Quick View Details.
 - Favourite/unfavourite functionality.
 - Responsive property cards.
 - Empty-state handling.
@@ -56,10 +55,10 @@ Since the assignment does not provide a backend/API specification, the applicati
 - View user's property posts.
 ### 📱 Responsive Design
 - The application is designed to provide a consistent and user-friendly experience across different screen sizes and devices, including:
-1. Desktop
-2. Laptop
-3. Tablet
-4. Mobile
+* 1. Desktop *
+* 2. Laptop *
+* 3. Tablet *
+* 4. Mobile *
 
 The UI adapts layouts, property cards, navigation, forms, and content sections to provide a responsive experience across supported screen sizes.
 
@@ -86,7 +85,7 @@ The Communication feature intentionally includes an NgModule-based implementatio
 | RxJS	         |  7.8.x      |
 | Bootstrap	     |  5.3.x      |
 | Persistence	 | Web Storage |
-|----------------|-------------|
+
 
 ## 📝 Requirements covered
 - User registration and login with route protection.
@@ -99,7 +98,8 @@ The Communication feature intentionally includes an NgModule-based implementatio
 - Communication/Messages page showing received and sent direct inquiries.
 - Unit tests for a component `(home.spec.ts)`, service `(apartment.service.spec.ts)` and NgModule-based `(communication.module.spec.ts)` communication feature.
 
-## 📂 Project Structure ├──
+## 📂 Project Structure 
+```bash
 src/
 ├── app/
 |   ├── app.html
@@ -206,6 +206,7 @@ src/
 ├── tsconfig.app.json
 ├── tsconfig.spec.json
 └── package.json
+```
 
 ## ⚙️ Setup Instructions 
 ### Requirements
@@ -213,25 +214,25 @@ src/
     npm: Compatible version bundled with Node.js 24
     Browser: Modern web browser
 
-1. clone the repo:
+* 1. clone the repo: *
 ```bash 
 git clone https://github.com/aakashsinghpatel/Rent-explorer.git
 ```
 
-2. Install all `npm` dependancies:
+* 2. Install all `npm` dependancies: *
 ```bash 
-cd rent-explorer
+cd Rent-explorer
 npm install
 ```
-3. Start development server
+* 3. Start development server *
 ```bash 
 npm start
 ```
-4. Build production application
+* 4. Build production application *
 ```bash
 npm run build
 ```
-5. Run unit tests
+* 5. Run unit tests *
 ```bash
 npm test
 ```
