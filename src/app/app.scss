@@ -6,3 +6,13 @@
 .navbar-brand {
     letter-spacing: -.02em;
 }
+
+.navbar-collapse {
+    display: none;
+    &.show {
+        display: block;
+    }
+    @media (min-width: 992px) {
+        display: flex !important;
+    }
+}

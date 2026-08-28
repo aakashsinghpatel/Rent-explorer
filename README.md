@@ -14,8 +14,9 @@ Renters can browse available apartments, search and filter listings, view detail
 Since the assignment does not provide a backend/API specification, the application uses browser web storage as a mock persistence layer. This keeps the application fully functional without requiring a backend server and allows the data layer to be replaced with real APIs later without changing the core feature contracts.
 
 ## 🔗 Project Links
-- GitHub Repository: `<GITHUB_REPOSITORY_URL>`
-- Live Application: `<DEPLOYED_APPLICATION_URL>`
+- GitHub Repository: [GITHUB_REPOSITORY_URL](https://github.com/aakashsinghpatel/Rent-explorer)
+- Live Application: [DEPLOYED_APPLICATION_URL](URL)
+- Local Application URL: [LOCAL_APPLICATION_URL](http://localhost:4200/rent-hub/home)
 
 ## ✨ Key Features
 ### 🔐 Authentication & Authorization
@@ -54,11 +55,7 @@ Since the assignment does not provide a backend/API specification, the applicati
 - View registered user information.
 - View user's property posts.
 ### 📱 Responsive Design
-- The application is designed to provide a consistent and user-friendly experience across different screen sizes and devices, including:
-#### 1. Desktop ####
-#### 2. Laptop ####
-#### 3. Tablet ####
-#### 4. Mobile ####
+- The application is designed to provide a consistent and user-friendly experience across different screen sizes and devices, including: `Desktop, Laptop, Tablet, Mobile`
 
 The UI adapts layouts, property cards, navigation, forms, and content sections to provide a responsive experience across supported screen sizes.
 
@@ -232,10 +229,16 @@ npm start
 ```bash
 npm run build
 ```
-#### 5. Run unit tests ####
+
+#### 5. Test application on browser ####
+```bash
+http://localhost:4200/rent-hub/home
+```
+#### 6. Run unit tests ####
 ```bash
 npm test
 ```
+
 ### 🔑  Demo credentials
 #### Landlord's Credentials: ####
 ```bash
@@ -246,6 +249,12 @@ npm test
 ```bash
 - Email: `renter@renthub.com`
 - Password: `Demo@123`
-```
+``
+
+## 🏁 Conclusion
+
+This project demonstrates a complete **end-to-end rent hub/Explore system**, for full fetured application for renter and landlord.
 
 
+## 🙌 Author
+ Akash Patel
