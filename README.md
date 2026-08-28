@@ -15,7 +15,7 @@ Since the assignment does not provide a backend/API specification, the applicati
 
 ## 🔗 Project Links
 - GitHub Repository: [GITHUB_REPOSITORY_URL](https://github.com/aakashsinghpatel/Rent-explorer)
-- Live Application: [DEPLOYED_APPLICATION_URL](URL)
+- Live Application: [DEPLOYED_APPLICATION_URL](https://renthexplorer.netlify.app/)
 - Local Application URL: [LOCAL_APPLICATION_URL](http://localhost:4200/rent-hub/home)
 
 ## ✨ Key Features
@@ -249,7 +249,7 @@ npm test
 ```bash
 - Email: `renter@renthub.com`
 - Password: `Demo@123`
-``
+```
 
 ## 🏁 Conclusion
 
