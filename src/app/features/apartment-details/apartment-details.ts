@@ -54,8 +54,8 @@ export class ApartmentDetailsComponent {
   }
   sendInquiry(payload: any) {
     this.inquiry.send(
-      payload.id,
-      payload.title,
+      payload.apartmentId,
+      payload.apartmentTitle,
       payload.landlordId,
       payload.landlordName,
       payload.message,
