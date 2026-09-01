@@ -77,7 +77,7 @@ The Communication feature intentionally includes an NgModule-based implementatio
 |----------------|-------------|
 | Angular	     |  22.1.x     | 
 | TypeScript	 |  6.0.x      |
-| Node.js	     |  24.x       |
+| Node.js	     |  24.15.0    |
 | Vitest	     |  4.x        |
 | RxJS	         |  7.8.x      |
 | Bootstrap	     |  5.3.x      |
@@ -207,7 +207,7 @@ src/
 
 ## ⚙️ Setup Instructions 
 ### Requirements
-    Node.js: 24.x
+    Node.js: 24.x (Minimum Node.js version: 24.15.0)
     npm: Compatible version bundled with Node.js 24
     Browser: Modern web browser
 
